@@ -1,0 +1,21 @@
+{
+  "title": "Lupine MLIP Elastic Benchmark Reproducible Artifact",
+  "description": "Reproducibility package and raw results for a 16-element cubic-metal benchmark comparing 1x1x1 and 3x3x3 MatPES elastic-constant calculations, an ensemble arm, and a leave-one-out PCA correction operator. The tested correction operator worsened accuracy on this benchmark; that negative result is retained.",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Welcing, Alex"
+    }
+  ],
+  "access_right": "open",
+  "keywords": [
+    "machine-learned interatomic potentials",
+    "elastic constants",
+    "MatPES",
+    "reproducibility",
+    "materials science"
+  ],
+  "version": "1.0.0",
+  "language": "eng",
+  "notes": "Canonical result provenance records git_sha and host as unknown. The release binds the preserved result and raw JSON files by SHA-256 but does not retroactively infer those missing generation-time fields."
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "lupine.layer2.raw.v1",
+  "element": "Ca",
+  "model": "TensorNet",
+  "functional": "PBE",
+  "model_name": "TensorNet-PES-MatPES-PBE-2025.2",
+  "structure": "fcc",
+  "supercell": 1,
+  "n_atoms": 4,
+  "lattice_a": 5.5622,
+  "c11": 20.43,
+  "c12": 9.66,
+  "c44": 15.8,
+  "elastic_tensor_voigt": [
+    [
+      20.43,
+      9.66,
+      9.66,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      9.66,
+      20.43,
+      9.66,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      9.66,
+      9.66,
+      20.43,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      15.8,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      15.8,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      15.8
+    ]
+  ],
+  "runtime_seconds": 1.74,
+  "status": "ok"
+}

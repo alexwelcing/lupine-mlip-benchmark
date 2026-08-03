@@ -1,0 +1,102 @@
+schema: lupine.mlip_elastic_benchmark.v1
+matpes_release: "2025.2"
+best_model: TensorNet/PBE
+best_model_name: TensorNet-PES-MatPES-PBE-2025.2
+ensemble_models:
+  - M3GNet
+  - CHGNet
+  - TensorNet
+note_qet_alias: >-
+  In MatPES 2025.2 the QET and TensorNet labels both resolve to a
+  TensorNet-MatPES checkpoint and return byte-identical Cij. The mlip elastic benchmark
+  roster therefore uses three distinct architectures only; QET is documented
+  as an alias footnote and excluded from the ensemble.
+
+cases:
+  # 16 elements x 3 architectures x 2 functionals x 2 supercells = 192 cases.
+  elements:
+    - Ag
+    - Al
+    - Au
+    - Ca
+    - Cr
+    - Cu
+    - Fe
+    - Mo
+    - Nb
+    - Ni
+    - Pd
+    - Pt
+    - Sr
+    - Ta
+    - V
+    - W
+  models:
+    - M3GNet
+    - CHGNet
+    - TensorNet
+  functionals:
+    - PBE
+    - r2SCAN
+  supercells:
+    - 1
+    - 3
+
+# Four arms compared in the headline table.
+arms:
+  raw-1x1x1:
+    model: TensorNet
+    functional: PBE
+    supercell: 1
+    description: single best PBE model, conventional cell, no correction
+  corrected-1x1x1:
+    model: TensorNet
+    functional: PBE
+    supercell: 1
+    description: single best PBE model + Lupine LOO-PCA bias correction + functional shift
+  ref-3x3x3:
+    model: TensorNet
+    functional: PBE
+    supercell: 3
+    description: single best PBE model, 3x3x3 supercell, no correction
+  ensemble-1x1x1:
+    models:
+      - M3GNet
+      - CHGNet
+      - TensorNet
+    functional: PBE
+    supercell: 1
+    description: mean of three distinct PBE architectures, conventional cell
+  scalar-bulk-1x1x1:
+    model: TensorNet
+    functional: PBE
+    supercell: 1
+    description: single best PBE model + LOO scalar re-scaling of the bulk-modulus functional shift
+
+# Bias extraction protocol.
+bias:
+  method: LOO-PCA
+  target_reference: TPBE_0K
+  shift_reference: Tr2SCAN_0K
+  coverage: 0.90
+
+# Cost model.
+cost:
+  currency: core_hours
+  n_cores: 1
+  seconds_to_hours: 3600.0
+
+# External data dependencies (expected to exist in the canonical checkout).
+data:
+  targets: /home/alex/Dev/lupine/lupine/data/targets_0K.json
+  existing_1x1x1: /home/alex/Dev/lupine/lupine/data/layer2_outputs
+  existing_3x3x3_16elem: /home/alex/Dev/lupine/lupine/data/layer2_outputs_3x3x3_16elem
+  existing_3x3x3_cuni: /home/alex/Dev/lupine/lupine/data/layer2_outputs_3x3x3
+  driver: /home/alex/Dev/lupine/lupine/data/layer2_benchmark_task.py
+  operator_module_root: /home/alex/Dev/lupine/lupine/python
+
+# Smoke-test subset.
+smoke:
+  elements:
+    - Ca
+    - Cu

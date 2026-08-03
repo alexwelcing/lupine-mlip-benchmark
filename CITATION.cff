@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this benchmark artifact, please cite the archived release."
+title: "Lupine MLIP Elastic Benchmark Reproducible Artifact"
+type: software
+authors:
+  - family-names: Welcing
+    given-names: Alex
+version: 1.0.0
+date-released: 2026-08-03
+repository-code: "https://github.com/alexwelcing/lupine-mlip-benchmark"
+url: "https://github.com/alexwelcing/lupine-mlip-benchmark/releases/tag/v1.0.0"
+abstract: >-
+  Reproducibility package and raw results for a 16-element cubic-metal
+  benchmark comparing 1x1x1 and 3x3x3 MatPES elastic-constant calculations,
+  an ensemble arm, and a leave-one-out PCA correction operator.
+keywords:
+  - machine-learned interatomic potentials
+  - elastic constants
+  - MatPES
+  - reproducibility
+  - materials science

@@ -1,0 +1,151 @@
+{
+  "schema_version": "lupine.mlip_elastic_benchmark.v1",
+  "provenance": {
+    "git_sha": "unknown",
+    "matpes_release": "2025.2",
+    "host": "unknown",
+    "run_at": "2026-06-27T02:35:32.766008+00:00",
+    "smoke": true,
+    "target_reference": "TPBE_0K",
+    "shift_reference": "Tr2SCAN_0K"
+  },
+  "arms": {
+    "raw-1x1x1": {
+      "mae_cij": 6.1181,
+      "mae_cij_tr2scan": 12.1736,
+      "median_mae_cij": 6.1181,
+      "mae_ci_low": 2.5132,
+      "mae_ci_high": 9.723,
+      "core_hours": 0.001122,
+      "total_runtime_seconds": 4.04,
+      "n_cases": 2
+    },
+    "corrected-1x1x1": {
+      "mae_cij": 13.0327,
+      "mae_cij_tr2scan": 6.1181,
+      "median_mae_cij": 13.0327,
+      "mae_ci_low": 2.5132,
+      "mae_ci_high": 23.5523,
+      "core_hours": 0.001122,
+      "total_runtime_seconds": 4.04,
+      "n_cases": 2,
+      "bias_method": "LOO-PCA",
+      "conformal_radius_gpa": 15.4679
+    },
+    "ref-3x3x3": {
+      "mae_cij": 6.1281,
+      "mae_cij_tr2scan": 12.1703,
+      "median_mae_cij": 6.1281,
+      "mae_ci_low": 2.5265,
+      "mae_ci_high": 9.7297,
+      "core_hours": 0.008997,
+      "total_runtime_seconds": 32.39,
+      "n_cases": 2
+    },
+    "ensemble-1x1x1": {
+      "mae_cij": 7.2329,
+      "mae_cij_tr2scan": 11.1806,
+      "median_mae_cij": 7.2329,
+      "mae_ci_low": 2.4882,
+      "mae_ci_high": 11.9775,
+      "core_hours": 0.003178,
+      "total_runtime_seconds": 11.44,
+      "n_cases": 2,
+      "n_models": 3
+    }
+  },
+  "cost_ratios": {
+    "raw_vs_ref": 8.02,
+    "ensemble_vs_raw": 2.83,
+    "corrected_vs_raw": 1.0
+  },
+  "per_element": [
+    {
+      "element": "Ca",
+      "arm": "raw-1x1x1",
+      "c11": 20.43,
+      "c12": 9.66,
+      "c44": 15.8,
+      "mae": 2.5131908264921403,
+      "mae_tr2scan": 2.5131908264921403,
+      "runtime_s": 1.74
+    },
+    {
+      "element": "Cu",
+      "arm": "raw-1x1x1",
+      "c11": 161.9,
+      "c12": 117.8,
+      "c44": 71.59,
+      "mae": 9.723033333333339,
+      "mae_tr2scan": 21.834089855406564,
+      "runtime_s": 2.3
+    },
+    {
+      "element": "Ca",
+      "arm": "corrected-1x1x1",
+      "c11": 20.43,
+      "c12": 9.66,
+      "c44": 15.8,
+      "mae": 2.5131908264921403,
+      "mae_tr2scan": 2.5131908264921403,
+      "runtime_s": 1.74
+    },
+    {
+      "element": "Cu",
+      "arm": "corrected-1x1x1",
+      "c11": 190.48810229360055,
+      "c12": 143.39399885319972,
+      "c44": 85.48746841941943,
+      "mae": 23.552289855406567,
+      "mae_tr2scan": 9.723033333333342,
+      "runtime_s": 2.3
+    },
+    {
+      "element": "Ca",
+      "arm": "ref-3x3x3",
+      "c11": 20.4,
+      "c12": 9.62,
+      "c44": 15.77,
+      "mae": 2.526524159825474,
+      "mae_tr2scan": 2.526524159825474,
+      "runtime_s": 8.19
+    },
+    {
+      "element": "Cu",
+      "arm": "ref-3x3x3",
+      "c11": 161.93,
+      "c12": 117.82,
+      "c44": 71.6,
+      "mae": 9.729700000000003,
+      "mae_tr2scan": 21.814089855406568,
+      "runtime_s": 24.2
+    },
+    {
+      "element": "Ca",
+      "arm": "ensemble-1x1x1",
+      "c11": 24.47333333333333,
+      "c12": 12.303333333333333,
+      "c44": 15.123333333333335,
+      "mae": 2.488226304261984,
+      "mae_tr2scan": 2.488226304261984,
+      "runtime_s": 4.42
+    },
+    {
+      "element": "Cu",
+      "arm": "ensemble-1x1x1",
+      "c11": 163.04666666666665,
+      "c12": 117.36,
+      "c44": 76.76666666666667,
+      "mae": 11.977477777777773,
+      "mae_tr2scan": 19.872978744295462,
+      "runtime_s": 7.02
+    }
+  ],
+  "caveats": [
+    "r2SCAN targets approximated by scalar bulk-modulus shift (Liu 2024); headline MAE is against TPBE_0K",
+    "QET=TensorNet alias deduplicated; ensemble uses three distinct architectures",
+    "Costs are cache-warm, single-seed, single-relax, CPU-equivalent core-hours (n_cores=1)",
+    "Au uses a PW91-GGA fallback, not PBE",
+    "LOO-PCA bias is fitted on the other 15 elements against TPBE_0K; in-sample bias invalidates the claim"
+  ]
+}

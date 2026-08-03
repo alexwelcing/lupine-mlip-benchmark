@@ -1,0 +1,280 @@
+{
+  "schema_version": "lupine.mlip_elastic_benchmark.runner.v1",
+  "cases_total": 24,
+  "smoke": true,
+  "warm_cache": false,
+  "dry_run": false,
+  "python": "/home/alex/Dev/lupine/lupine/data/.venv/bin/python",
+  "driver": "/home/alex/Dev/lupine/lupine/data/layer2_benchmark_task.py",
+  "status_counts": {
+    "skipped": 23,
+    "ok": 1
+  },
+  "cases": [
+    {
+      "case": {
+        "element": "Ca",
+        "model": "M3GNet",
+        "functional": "PBE",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_M3GNet_PBE_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "M3GNet",
+        "functional": "PBE",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_M3GNet_PBE_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "M3GNet",
+        "functional": "r2SCAN",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_M3GNet_r2SCAN_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "M3GNet",
+        "functional": "r2SCAN",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_M3GNet_r2SCAN_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "CHGNet",
+        "functional": "PBE",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_CHGNet_PBE_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "CHGNet",
+        "functional": "PBE",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_CHGNet_PBE_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "CHGNet",
+        "functional": "r2SCAN",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_CHGNet_r2SCAN_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "CHGNet",
+        "functional": "r2SCAN",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_CHGNet_r2SCAN_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "TensorNet",
+        "functional": "PBE",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_TensorNet_PBE_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "TensorNet",
+        "functional": "PBE",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_TensorNet_PBE_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "TensorNet",
+        "functional": "r2SCAN",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_TensorNet_r2SCAN_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Ca",
+        "model": "TensorNet",
+        "functional": "r2SCAN",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Ca_TensorNet_r2SCAN_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "M3GNet",
+        "functional": "PBE",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_M3GNet_PBE_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "M3GNet",
+        "functional": "PBE",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_M3GNet_PBE_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "M3GNet",
+        "functional": "r2SCAN",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_M3GNet_r2SCAN_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "M3GNet",
+        "functional": "r2SCAN",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_M3GNet_r2SCAN_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "CHGNet",
+        "functional": "PBE",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_CHGNet_PBE_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "CHGNet",
+        "functional": "PBE",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_CHGNet_PBE_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "CHGNet",
+        "functional": "r2SCAN",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_CHGNet_r2SCAN_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "CHGNet",
+        "functional": "r2SCAN",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_CHGNet_r2SCAN_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "TensorNet",
+        "functional": "PBE",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_TensorNet_PBE_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "TensorNet",
+        "functional": "PBE",
+        "supercell": 3
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_TensorNet_PBE_3x3x3.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "TensorNet",
+        "functional": "r2SCAN",
+        "supercell": 1
+      },
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_TensorNet_r2SCAN_1x1x1.json",
+      "status": "skipped",
+      "reason": "output already exists"
+    },
+    {
+      "case": {
+        "element": "Cu",
+        "model": "TensorNet",
+        "functional": "r2SCAN",
+        "supercell": 3
+      },
+      "command": "/home/alex/Dev/lupine/lupine/data/.venv/bin/python /home/alex/Dev/lupine/lupine/data/layer2_benchmark_task.py --element Cu --model TensorNet --functional r2SCAN --supercell 3 --output /home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_TensorNet_r2SCAN_3x3x3.json",
+      "output": "/home/alex/Dev/lupine/lupine-mlip-benchmark/results/raw/Cu_TensorNet_r2SCAN_3x3x3.json",
+      "status": "ok",
+      "runtime_seconds": 30.22
+    }
+  ]
+}

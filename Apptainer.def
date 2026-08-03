@@ -1,0 +1,52 @@
+Bootstrap: docker
+From: python:3.11-slim-bookworm
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update && apt-get install -y --no-install-recommends \
+        gcc g++ git wget ca-certificates && \
+        rm -rf /var/lib/apt/lists/*
+
+    python3 -m pip install --upgrade pip setuptools wheel
+
+    # Pin the exact Python stack that produced the canonical MatPES 2025.2 data.
+    # CPU torch is used so the image is portable to GPU-less reproducibility
+    # runners; numerical predictions are unchanged, only wall time differs.
+    python3 -m pip install --no-cache-dir \
+        torch==2.12.1 \
+        --index-url https://download.pytorch.org/whl/cpu
+
+    python3 -m pip install --no-cache-dir \
+        matgl==4.0.2 \
+        matcalc==0.5.1 \
+        pymatgen==2026.5.4 \
+        numpy==2.4.6 \
+        scipy==1.17.1 \
+        pyyaml==6.0.3
+
+    # Install the artifact itself.
+    mkdir -p /opt/lupine-mlip-benchmark
+    cp -r . /opt/lupine-mlip-benchmark/
+    chmod +x /opt/lupine-mlip-benchmark/run.sh /opt/lupine-mlip-benchmark/scripts/*.py
+
+%environment
+    export BENCHMARK_VENV=/usr/local
+    export BENCHMARK_DRIVER=/home/alex/Dev/lupine/lupine/data/layer2_benchmark_task.py
+    export BENCHMARK_OPERATOR_ROOT=/home/alex/Dev/lupine/lupine/python
+    export PATH=/opt/lupine-mlip-benchmark:/opt/lupine-mlip-benchmark/scripts:${PATH}
+
+%runscript
+    cd /opt/lupine-mlip-benchmark
+    exec ./run.sh
+
+%help
+    Lupine MLIP Elastic Benchmark reproducible artifact.
+
+    Build:
+        apptainer build mlip-elastic-benchmark-2026.sif Apptainer.def
+
+    Run (requires the lupine repo mounted at /home/alex/Dev/lupine/lupine):
+        apptainer run --bind /path/to/lupine:/home/alex/Dev/lupine/lupine mlip-elastic-benchmark-2026.sif
+
+    Smoke test only:
+        apptainer exec mlip-elastic-benchmark-2026.sif python3 /opt/lupine-mlip-benchmark/scripts/verify.py --smoke
